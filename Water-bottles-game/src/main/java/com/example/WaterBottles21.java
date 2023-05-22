@@ -45,15 +45,20 @@ public class WaterBottles21 {
 			//   and return back -1
 			 
 			//YOUR CODE STARTS HERE
-                        if (scanner.hasNextInt()) {
+                      	 try {
+		 		if (scanner.hasNextInt()) {
 				num = scanner.nextInt();
 				
 				if (num >= 1 && num <= 4) {
 					return num;
 				}
-			}	
+			}
 			this.printStream.print("As per the Game Rules, please pick up bottles between 1 and 4 only, both inclusive");
-            		return -1;
+           		return -1;
+		 } catch (InputMismatchException e) {
+			printStream.print("As per the Game Rules, please pick up bottles between 1 and 4 only, both inclusive");
+		     	return -1;
+		 }
 	                //YOUR CODE ENDS HERE	
 	 }
  
